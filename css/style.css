@@ -1,0 +1,813 @@
+@charset "UTF-8";
+/*reuse*/
+body {
+  font-size: 1pxrem;
+  color: #000;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.875;
+  letter-spacing: 0.03em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.header {
+  width: 100%;
+  background-color: rgba(245, 246, 247, 0.9);
+  padding: 0.625rem 0rem;
+}
+.header__inner {
+  max-width: 1440px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gnav {
+  justify-self: end;
+}
+.gnav__list {
+  display: grid;
+  grid-auto-flow: column;
+  -moz-column-gap: 1.875rem;
+       column-gap: 1.875rem;
+}
+
+.mainvisual__inner {
+  max-width: 1440px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mainvisual__pic {
+  background-position: center center;
+}
+.mainvisual__pic img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.menu {
+  background-image: url(../image/nemu\ back.png);
+  margin-bottom: 9.375rem;
+  padding: 9.375rem 0rem;
+  text-align: center;
+}
+.menu__inner {
+  max-width: 1440px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu__pic {
+  text-align: center;
+}
+
+.information {
+  background-image: url(../image/infomation\ back.png);
+  padding-top: 3.125rem;
+  padding-bottom: 3.125rem;
+}
+.information__inner {
+  max-width: 1440px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.information__title {
+  font-size: 2rem;
+}
+.information__money {
+  font-size: 2rem;
+  margin-top: 1.875rem;
+}
+.information p {
+  margin-top: 0.625rem;
+}
+
+.footer {
+  background-color: #001f3f;
+  color: white;
+  font-family: sans-serif;
+  padding: 30px 0 10px;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.go-to-top {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  margin-left: auto;
+  order: 2;
+  text-align: right;
+  display: block;
+}
+
+.go-to-top .sr-only {
+  display: inline;
+}
+
+.footer__contact {
+  order: 1;
+  margin-bottom: 25px;
+}
+
+.footer__contact p {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.footer__contact img {
+  vertical-align: middle;
+}
+
+.footer__copy {
+  width: 100%;
+  text-align: center;
+  order: 3;
+  display: block;
+  padding-top: 15px;
+  border-top: 1px solid #1a3350;
+  font-size: 12px;
+}
+
+/*top*/
+.pc-only {
+  display: none;
+}
+
+.sp-only {
+  /* モバイルでは通常の改行として表示（brのデフォルト動作） */
+  display: inline;
+}
+
+.concept {
+  padding: 6.25rem 0rem;
+  text-align: center;
+  margin-top: 9.375rem;
+  background-image: url(../image/concept\ back.png);
+}
+.concept__title {
+  font-size: 2rem;
+  margin-bottom: 5rem;
+  font-weight: bold;
+}
+
+.color {
+  padding-top: 15.625rem;
+}
+.color__inner {
+  max-width: 1440px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.color__left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.color__title, .color__text, .color__inner .color__button {
+  max-width: 500px;
+}
+.color__pic {
+  width: 380px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.color__title {
+  font-size: 1.5rem;
+  padding-bottom: 1.875rem;
+}
+.color__text {
+  padding-bottom: 1.875rem;
+}
+
+.treatment {
+  padding-top: 15.625rem;
+  padding-bottom: 15.625rem;
+}
+.treatment__inner {
+  max-width: 1440px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.treatment__left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.treatment__title, .treatment__text, .treatment__inner .treatment__button {
+  max-width: 500px;
+}
+.treatment__pic {
+  width: 380px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.treatment__title {
+  font-size: 1.5rem;
+  padding-bottom: 1.875rem;
+}
+.treatment__text {
+  padding-bottom: 1.875rem;
+}
+
+.menu__inner {
+  max-width: 1440px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.private__inner {
+  max-width: 1440px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  padding: 0rem 1.25rem;
+}
+.private__block {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.private__content {
+  padding-top: 14.375rem;
+  padding-bottom: 0rem;
+}
+.private__title {
+  font-size: 1.5rem;
+  margin-bottom: 3.125rem;
+}
+.private__text {
+  margin-bottom: 1.25rem;
+}
+.private__shampoopic {
+  display: block;
+  margin-left: auto;
+  text-align: right;
+}
+.private__text--style {
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
+}
+.private__pics-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.private__img1 {
+  grid-area: 1/1/3/2;
+}
+.private__img2 {
+  grid-area: 2/2/4/3;
+  transform: translateY(-55px);
+}
+.private__img3 {
+  grid-area: 1/3/3/4;
+}
+.private__text--request {
+  font-size: 1rem;
+  text-align: left;
+  width: 58%;
+  margin-left: 29.375rem;
+  margin-right: 0;
+  margin-top: -100px;
+  margin-bottom: 3.125rem;
+}
+
+/*color*/
+.colorpage {
+  margin-top: 9.375rem;
+  margin-bottom: 9.375rem;
+}
+.colorpage__inner {
+  max-width: 1440px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.colorpage__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 6.25rem;
+}
+.colorpage__pic {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 20px;
+}
+.colorpage__pic img {
+  max-width: 500px;
+  height: auto;
+}
+
+.drug__inner {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.texture {
+  margin-bottom: 9.375rem;
+}
+.texture__inner {
+  max-width: 1440px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 50px;
+}
+.texture img {
+  flex: 0 0 40%;
+  max-width: 400px;
+}
+.texture__content {
+  flex: 1;
+}
+.texture__title {
+  font-size: 24px;
+  line-height: 1.6;
+  font-weight: bold;
+  margin-bottom: 3.125rem;
+}
+.texture__text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.contrast {
+  margin-bottom: 9.375rem;
+}
+.contrast__inner {
+  max-width: 1440px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 50px;
+}
+.contrast img {
+  flex: 0 0 40%;
+  max-width: 400px;
+}
+.contrast__content {
+  flex: 1;
+}
+.contrast__title {
+  font-size: 24px;
+  line-height: 1.6;
+  font-weight: bold;
+  margin-bottom: 3.125rem;
+}
+.contrast__text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.fade-up-title,
+.fade-up-text {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up-title.show,
+.fade-up-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*treatment*/
+.healthyhair {
+  margin-bottom: 11.875rem;
+  padding: 6.25rem 0rem;
+  text-align: center;
+  margin-top: 9.375rem;
+  background-image: url(../image/heaer\ back2.png);
+}
+.healthyhair__title {
+  font-size: 2rem;
+  margin-bottom: 5rem;
+  font-weight: bold;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.treatment-steps {
+  background-color: #f0f0f0;
+  padding: 80px 0;
+  text-align: center;
+  margin-bottom: 9.375rem;
+}
+.treatment-steps__title {
+  font-size: 32px;
+  margin-bottom: 60px;
+  text-align: left;
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  padding-left: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1000px;
+  position: relative;
+}
+.steps-list__item {
+  padding: 40px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.steps-list::before {
+  content: "";
+  position: absolute;
+  top: -3.75rem;
+  bottom: 6.25rem;
+  left: 50%;
+  width: 5px;
+  background-color: #ccc;
+  transform: translateX(-50%);
+}
+
+.steps-list__item::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20%;
+  height: 5px;
+  background-color: #ccc;
+  transform: translateY(-50%);
+}
+
+.step-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.steps-list__item:nth-child(odd) .step-content {
+  flex-direction: row;
+}
+.steps-list__item:nth-child(odd)::after {
+  right: 50%;
+  left: unset;
+}
+
+.steps-list__item:nth-child(even) .step-content {
+  flex-direction: row-reverse;
+}
+.steps-list__item:nth-child(even)::after {
+  left: 50%;
+}
+
+.step-media {
+  flex: 0 0 300px;
+  max-width: 300px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.step-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.step-info {
+  flex: 1;
+  max-width: 50%;
+  text-align: left;
+  padding: 20px;
+}
+
+.step-number {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.step-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  background-color: #fff;
+  padding: 0.3125rem;
+  border-radius: 0.3125rem;
+}
+
+/*-------------------------------------------------------------*/
+@media (min-width: 441px) {
+  .gnav2 {
+    display: none;
+  }
+  .gnav2__item {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .concept2 {
+    display: none;
+  }
+  .menu__pic2 {
+    display: none;
+  }
+  .color__img2 {
+    display: none;
+  }
+  .treatment__img2 {
+    display: none;
+  }
+  .sh_br {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .information {
+    display: block !important;
+    justify-content: unset;
+    align-items: unset;
+  }
+}
+@media (max-width: 440px) {
+  .colorpage__pic {
+    display: flex;
+  }
+  .colorpage__pic img:nth-child(2) {
+    display: none;
+  }
+  .pc_br {
+    display: none;
+  }
+  body {
+    font-size: 0.75rem;
+  }
+  .gnav {
+    display: none;
+  }
+  .gnav2 {
+    justify-self: center;
+    padding: 0.3125rem;
+  }
+  .gnav2__list {
+    display: grid;
+    grid-auto-flow: column;
+    -moz-column-gap: 1.875rem;
+         column-gap: 1.875rem;
+  }
+  .concept__title {
+    font-size: 1rem !important;
+  }
+  .color__inner {
+    display: block;
+  }
+  .color__img2 {
+    display: block;
+  }
+  .color__title {
+    font-size: 1rem !important;
+  }
+  .color__text {
+    text-align: center !important;
+    display: block;
+    justify-content: center;
+    padding-top: 0.9375rem;
+  }
+  .color__img1 {
+    display: none;
+  }
+  .color__img1 {
+    display: none;
+  }
+  .color__title {
+    font-size: 1rem !important;
+  }
+  .color__text {
+    text-align: center !important;
+    display: block;
+    justify-content: center;
+    padding-top: 0.9375rem;
+  }
+  .color__img1 {
+    display: none;
+  }
+  .color__img2 {
+    display: block;
+  }
+  .treatment__title {
+    font-size: 1rem !important;
+  }
+  .treatment__img1 {
+    display: none;
+  }
+  .treatment__title {
+    font-size: 1rem !important;
+  }
+  .treatment__img1 {
+    display: none;
+  }
+  .private__title {
+    font-size: 1rem !important;
+  }
+  .private__text {
+    font-size: 0.75rem !important;
+  }
+  .private__inner {
+    padding: 40px 15px;
+  }
+  .private__block {
+    display: initial !important;
+  }
+  .private__content {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem;
+    text-align: left;
+  }
+  .private__title {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .private__shampoopic {
+    margin-left: 0;
+    text-align: center;
+  }
+  .private__text--style {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  .private__pics-row {
+    margin-top: 3.125rem;
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+  .private__pics-row__img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .private__img1, .private__img2, .private__img3 {
+    grid-area: unset;
+    transform: none;
+  }
+  .private .private__img {
+    display: none;
+  }
+  .private .private__img.active {
+    display: block;
+  }
+  .private__text--request {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0;
+    margin-top: 0rem;
+    padding-top: 3.125rem;
+    font-size: 0.75rem !important;
+  }
+  .menu__pic1 {
+    display: none;
+  }
+  .information {
+    background-image: url(../image/infomation\ back__pic2.png) !important;
+    background-repeat: no-repeat;
+    text-align: left;
+  }
+  .information__inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .information iframe {
+    height: 18.75rem;
+    width: 18.75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .information__text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .information__title {
+    font-size: 1rem !important;
+  }
+  .information__money {
+    font-size: 1rem !important;
+  }
+  /*colorpage*/
+  .colorpage__pic {
+    display: none;
+  }
+  .texture__title {
+    margin-top: 1.25rem;
+    font-size: 1rem !important;
+  }
+  .texture__text {
+    font-size: 0.75rem !important;
+  }
+  .texture__inner {
+    display: block !important;
+  }
+  .contrast__title {
+    margin-top: 1.25rem;
+    font-size: 1rem !important;
+  }
+  .contrast__text {
+    font-size: 0.75rem !important;
+  }
+  .contrast__inner {
+    display: block !important;
+  }
+  /*treatment*/
+  .healthyhair__title {
+    font-size: 1rem !important;
+  }
+  .step-description {
+    font-size: 0.75rem !important;
+  }
+  .step-content {
+    display: block !important;
+  }
+  .step-media {
+    margin-left: 1.25rem;
+  }
+  .step-info {
+    margin-left: auto;
+  }
+  .steps-list__item::after {
+    display: none;
+  }
+  .steps-list::before {
+    bottom: 18.75rem !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
