@@ -130,6 +130,19 @@ img {
     }
 }
 
+.mv {
+    width: 100%;
+    height: 568px;
+    /* PC時の高さ（横長） */
+    overflow: hidden;
+}
+
+.mv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .menu {
     background-image: url(../image/nemu\ back.png);
@@ -743,6 +756,8 @@ img {
 
 
 
+
+
 }
 
 @media (max-width:700px) {
@@ -788,6 +803,12 @@ img {
         }
     }
 
+    .mv {
+        height: 464px;
+        width: 351px;
+    }
+
+
     .concept {
         &__title {
             font-size: rem(16) !important;
@@ -795,9 +816,6 @@ img {
     }
 
     .color {
-        &__inner {
-            display: block;
-        }
 
         &__img2 {
             display: block;

@@ -55,6 +55,20 @@ img {
   display: block;
 }
 
+.mv {
+  width: 100%;
+  height: 568px;
+  /* PC時の高さ（横長） */
+  overflow: hidden;
+}
+
+.mv img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .menu {
   background-image: url(../image/nemu\ back.png);
   margin-bottom: 9.375rem;
@@ -626,11 +640,12 @@ img {
     -moz-column-gap: 1.875rem;
          column-gap: 1.875rem;
   }
+  .mv {
+    height: 464px;
+    width: 351px;
+  }
   .concept__title {
     font-size: 1rem !important;
-  }
-  .color__inner {
-    display: block;
   }
   .color__img2 {
     display: block;
