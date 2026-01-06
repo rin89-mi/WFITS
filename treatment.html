@@ -14,62 +14,95 @@
 
     <header class="header">
         <div class="header__inner">
-            <h1><a href="./index.html"><img src="./image/logo2.png" alt=""></a></h1>
+            <h1>
+                <a href="./index.html">
+                    <img src="./image/logo2.png" alt="">
+                </a>
+            </h1>
 
             <nav class="gnav">
                 <ul class="gnav__list">
-                    <li class="gnav__item"><a href="./index.html">TOP</a></li>
-                    <li class="gnav__item"><a href="./color.html">Gray color</a></li>
-                    <li class="gnav__item"><a href="./treatment.html">Treatment</a></li>
-                    <li class="gnav__item"><a href="#menu">Menu</a></li>
+                    <li class="gnav__item">
+                        <a href="./index.html">TOP</a>
+                    </li>
+                    <li class="gnav__item">
+                        <a href="./color.html">Gray color</a>
+                    </li>
+                    <li class="gnav__item">
+                        <a href="./treatment.html">Treatment</a>
+                    </li>
+                    <li class="gnav__item">
+                        <a href="#menu">Menu</a>
+                    </li>
                 </ul>
             </nav>
 
             <a href="https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000592672">
-                <img src="./image/btn2.png" alt="予約ボタン(ホットペーパービューティーのページに飛ぶ)">
+                <img src="./image/btn2.png" alt="予約ボタン（ホットペーパービューティーのページに飛ぶ）">
             </a>
         </div>
     </header>
 
     <main class="treatmentpage">
-
-        <!-- メインビジュアル -->
-        <div class="mainvisual">
-            <div class="mainvisual__inner">
-                <picture class="mainvisual__pic">
-                    <source media="(max-width: 440px)" srcset="./image/main.sh.png">
-                    <img src="./image/mainvisual.png" alt="">
-                </picture>
-
-                <nav class="gnav2">
-                    <ul class="gnav2__list">
-                        <li class="gnav2__item"><a href="./index.html">TOP</a></li>
-                        <li class="gnav2__item"><a href="./color.html">Gray color</a></li>
-                        <li class="gnav2__item"><a href="./treatment.html">Treatment</a></li>
-                        <li class="gnav2__item"><a href="#menu">Menu</a></li>
-                    </ul>
-                </nav>
+        <div class="main">
+            <!-- メインビジュアル -->
+            <div class="mainvisual">
+                <div class="mainvisual__inner">
+                    <picture class="mainvisual__pic">
+                        <source media="(max-width: 440px)" srcset="./image/main.sh.png">
+                        <div class="mv">
+                            <img src="./image/mainvisual.webp" alt="メインビジュアル">
+                        </div>
+                    </picture>
+                    <nav class="gnav2">
+                        <ul class="gnav2__list">
+                            <li class="gnav2__item"><a href="./index.html">TOP</a></li>
+                            <li class="gnav2__item"><a href="./color.html">Gray color</a></li>
+                            <li class="gnav2__item"><a href="./treatment.html">Treatment</a></li>
+                            <li class="gnav2__item"><a href="#menu">Menu</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
 
-        <!-- 健康な毛髪とは -->
-        <section class="healthyhair">
-            <div class="healthyhair__inner">
-                <h2 class="healthyhair__title">健康な毛髪の状態とは??</h2>
-                <div class="healthyhair__text fade-up">
-                    <p>
-                        健康な毛髪のキューティクル領域は表面の疎水性が高く、<br>
-                        内部に向かって親水性が高くなります。<br>
-                        CMC領域は「タンパク質」と「脂質」で構成され、<br>
-                        そのバランスにより疎水・浸水の領域に分かれます。
-                    </p>
-                </div>
+
+        <!-- 語りかけ：共感ブロック -->
+        <section class="talk-section">
+            <div class="talk-section__inner">
+                <h2 class="talk-section__title">
+                    トリートメントをしても、<br>
+                    満足できなかった方へ
+                </h2>
+
+                <p class="talk-section__text">
+                    その日は良くても、すぐに元に戻る。<br>
+                    ツヤが出にくくなってきた。<br>
+                    年齢とともに、髪が扱いにくい。
+                </p>
+            </div>
+        </section>
+
+        <!-- 施術後の変化 -->
+        <section class="result-section">
+            <div class="result-section__inner">
+                <h3 class="result-section__title">施術後の変化</h3>
+
+                <p class="result-section__list">
+                    やわらかく、指通りの良い質感へ。<br>
+                    ツヤが出やすく、まとまりやすい髪に。<br>
+                    カラー後も、手触りが続きやすくなります。
+                </p>
+
+                <p class="result-section__note">
+                    髪の状態に合わせて、無理のないケアをご提案します。
+                </p>
             </div>
         </section>
 
         <!-- 4STEP トリートメント -->
         <section class="treatment-steps">
-            <h2 class="treatment-steps__title">4STEPトリートメント</h2>
+            <h2 class="treatment-steps__title">髪の内側から整える、4STEPトリートメント</h2>
 
             <ul class="steps-list">
 
@@ -122,8 +155,30 @@
                         </div>
                     </div>
                 </li>
-
             </ul>
+        </section>
+
+        <section class="healthyhair">
+            <div class="healthyhair__inner">
+                <h2 class="healthyhair__title">健康な毛髪の状態とは??</h2>
+                <p class="healthyhair__lead">
+                    トリートメントの効果を実感しやすくするために、
+                    髪の構造について簡単にご説明します。
+                </p>
+                <div class="healthyhair__text fade-up">
+                    <p>
+                    <p>
+                        健康な髪は、表面で水分をはじき、<br>
+                        内側にしっかりと潤いを保てる状態です。<br><br>
+
+                        髪の内部には「CMC」と呼ばれる、
+                        タンパク質と脂質でできた部分があり、<br>
+                        このバランスが整っていることで、
+                        しなやかでツヤのある髪が保たれます。
+                    </p>
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section id="menu" class="menu">
@@ -156,19 +211,19 @@
 
     </main>
 
-    <footer class="footer">
+    <footer class=" footer">
         <div class="footer__inner">
             <a href="#top" class="go-to-top" id="js-goto-top">
                 <span aria-hidden="true">↑</span>
                 <span class="sr-only">ページトップへ</span>
             </a>
-
             <div class="footer__contact">
                 <p>TEL 052-351-5012</p>
-                <img src="./image/01 Static Glyph/01 Gradient Glyph/Instagram_Glyph_Gradient.png" alt="Instagram"
-                    width="45px">
+                <a href="https://www.instagram.com/wfits.official?igsh=azg5YmhwdzR0NjN4&utm_source=qr">
+                    <img src="./image/01 Static Glyph/01 Gradient Glyph/Instagram_Glyph_Gradient.png" alt="Instagram"
+                        width="45px">
+                </a>
             </div>
-
             <small class="footer__copy">@copy2025.WFITS</small>
         </div>
     </footer>

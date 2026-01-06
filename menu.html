@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>グレイカラー・白髪カバー</title>
+    <title>WFITS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <div id="top"></div>
+    <header id="top"></header>
     <header class="header">
         <div class="header__inner">
             <h1>
@@ -45,12 +46,7 @@
     <main class="main">
         <div class="mainvisual">
             <div class="mainvisual__inner">
-                <picture class="mainvisual__pic">
-                    <source media="(max-width: 440px)" srcset="./image/main.sh.png">
-                    <div class="mv">
-                        <img src="./image/mainvisual.webp" alt="メインビジュアル">
-                    </div>
-                </picture>
+
                 <nav class="gnav2">
                     <ul class="gnav2__list">
                         <li class="gnav2__item"><a href="./index.html">TOP</a></li>
@@ -62,57 +58,86 @@
             </div>
         </div>
 
-        <section class="colorpage">
-            <div class="colorpage__inner">
-                <h2 class="colorpage__title">グレイカラー</h2>
-                <picture class="colorpage__pic">
-                    <img src="./image/colorpage.img.png" alt="">
-                    <img src="./image/colorpage.tool.png" alt="">
-                </picture>
+        <section class="menuplan">
+            <h1 class="menu__title">MENU</h1>
+
+            <!-- カット -->
+            <div class="menu__category">
+                <h2 class="menu__category-title">カット</h2>
+
+                <div class="menu__item">
+                    <p class="menu__name">カット</p>
+                    <p class="menu__price">¥5,000~</p>
+                </div>
+            </div>
+
+            <!-- カラー -->
+            <div class="menu__category">
+                <h2 class="menu__category-title">カラー</h2>
+
+                <div class="menu__item">
+                    <p class="menu__name">ナチュラル</p>
+                    <p class="menu__price">¥6,600~</p>
+                </div>
+
+                <div class="menu__item">
+                    <p class="menu__name">白髪染め</p>
+                    <p class="menu__price">¥7,700~</p>
+                </div>
+
+                <div class="menu__item">
+                    <p class="menu__name">ブリーチ</p>
+                    <p class="menu__price">¥7,700~</p>
+                </div>
+            </div>
+
+            <!-- パーマ -->
+            <div class="menu__category">
+                <h2 class="menu__category-title">パーマ</h2>
+
+                <div class="menu__item">
+                    <p class="menu__name">パーマ</p>
+                    <p class="menu__price">¥6,600~</p>
+                </div>
+
+                <div class="menu__item">
+                    <p class="menu__name">デザインパーマ</p>
+                    <p class="menu__price">¥8,800~</p>
+                </div>
+            </div>
+
+            <!-- トリートメント -->
+            <div class="menu__category">
+                <h2 class="menu__category-title">トリートメント</h2>
+
+                <div class="menu__item">
+                    <p class="menu__name">トリートメント</p>
+                    <p class="menu__price">¥4,400~</p>
+                </div>
+
+                <div class="menu__item">
+                    <p class="menu__name">ノンダメージ</p>
+                    <p class="menu__price">¥2,200~</p>
+                </div>
+            </div>
+
+            <!-- その他 -->
+            <div class="menu__category">
+                <h2 class="menu__category-title">その他</h2>
+
+                <div class="menu__item">
+                    <p class="menu__name">シャンプー・ブロー</p>
+                    <p class="menu__price">¥2,200~</p>
+                </div>
+
+                <div class="menu__item">
+                    <p class="menu__name">縮毛矯正</p>
+                    <p class="menu__price">¥18,700~</p>
+                </div>
             </div>
         </section>
 
-        <div class="drug">
-            <div class="drug">
-                <section class="texture">
-                    <div class="texture__inner">
-                        <picture class="texture__pic"><img src="./image/drug1.png" alt="髪質を美しく見せる薬剤"></picture>
-                        <div class="texture__content">
-                            <h2 class="texture__title fade-up-title">透明感とやわらかさを引き出し、<br class="pc_br">
-                                質感までも美しく見せる仕上がりを実現します。</h2>
-                            <div class="texture__text fade-up-text">
-                                <p>透明感とやわらかさを実現し、質感までも美しく仕上げます。
-                                    地の髪色をコントロールしながら、<br class="pc_br">シアーで赤みの出にくい染料を何層も重ねることで、
-                                    根元から毛先まで濁りのないニュアンスカラーを表現。<br class="pc_br">
-                                    重さや濁りを感じさせない、やわらかな空気感をまとったクリアな仕上がりへ導きます。
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="contrast">
-                    <div class="contrast__inner">
-                        <picture class="contrast__pic"><img src="./image/drug2.png" alt="白髪と黒髪おコントラストをやわらげて自然になじませる薬剤">
-                        </picture>
-                        <div class="contrast__content">
-                            <h2 class="contrast__title fade-up-title">透明感と彩度にこだわりながら、<br>
-                                白髪と黒髪のコントラストをやわらげて自然に馴染ませます。</h2>
-                            <div class="contrast__text fade-up-text">
-                                <p>透明感と彩度にこだわりながら、黒髪には透明感を、<br>
-                                    白髪には淡い色みを発色させることでコントラストをやわらげ、柔らかく馴染ませます。<br>
-                                    さらに、白髪染めに使われる黒褐色系染料を最小限に抑え、<br>
-                                    シアーブルーベースに複数の染料を組み合わせたこだわりの処方で、1本でハイブリッドな色相を叶えます。</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
 
-        <section id="menu" class="menu">
-            <picture class="menu__pic">
-                <img src="./image/menu.png" alt="メニュー">
-            </picture>
-        </section>
 
         <div class="information">
             <div class="information__inner">
@@ -132,6 +157,7 @@
                 </div>
             </div>
         </div>
+
     </main>
 
     <footer class=" footer">
