@@ -19,10 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         '.fade-up, .fade-up-title, .fade-up-text'
     );
 
-    const fadeObserver = new IntersectionObserver((entries) => {
+    const fadeObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
+                observer.unobserve(entry.target); // 一度だけ
             }
         });
     }, { threshold: 0.3 });
@@ -36,10 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
         '.talk-section, .result-section'
     );
 
-    const talkObserver = new IntersectionObserver((entries) => {
+    const talkObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-show');
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.4 });
@@ -66,10 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     /* =====================
-     グローバルメニュー current 自動判定
-  ===================== */
+       グローバルメニュー current 自動判定
+    ===================== */
     const currentPath = location.pathname;
 
     const navLinks = document.querySelectorAll(
@@ -77,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     navLinks.forEach(link => {
-        // #menu などのページ内リンクは除外
         if (link.getAttribute('href').startsWith('#')) return;
 
         const linkPath = new URL(link.href).pathname;
@@ -86,5 +86,20 @@ document.addEventListener('DOMContentLoaded', () => {
             link.parentElement.classList.add('current');
         }
     });
+    /* =====================
+   マーカー演出（文字は固定）
+===================== */
+    const markers = document.querySelectorAll('.js-marker');
+
+    const markerObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.6 });
+
+    markers.forEach(marker => markerObserver.observe(marker));
 
 });

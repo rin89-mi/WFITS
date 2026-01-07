@@ -70,7 +70,7 @@ $breakpoints: (
     width: 100%;
     position: fixed;
     z-index: 1000;
-    background-color: rgba(245, 246, 247, 0.9);
+    background-color: rgba(245, 246, 247);
     padding: rem(10) rem(0);
 
     &__inner {
@@ -219,9 +219,9 @@ img {
         text-align: center;
         order: 3;
         display: block;
-        padding-top: 15px;
+        padding-top: rem(15);
         border-top: 1px solid #1a3350;
-        font-size: 12px;
+        font-size: rem(16);
     }
 }
 
@@ -229,7 +229,7 @@ img {
 .go-to-top {
     text-decoration: none;
     color: white;
-    font-size: 14px;
+    font-size: rem(16);
     margin-left: auto;
     order: 2;
     text-align: right;
@@ -282,7 +282,7 @@ img {
 .go-to-top {
     text-decoration: none;
     color: white;
-    font-size: 14px;
+    font-size: rem(16);
     margin-left: auto;
     order: 2;
     text-align: right;
@@ -331,7 +331,7 @@ img {
     &__left {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: rem(20);
         text-align: center;
     }
 
@@ -476,20 +476,40 @@ img {
 
 /* menu */
 .menuplan {
-    font-size: rem(32);
+    font-size: rem(16);
     margin-bottom: rem(80);
-    font-weight: bold;
+
 
     &__inner {
         @include inner();
     }
 }
 
+.menu__title {
+    font-size: rem(32);
+    text-align: center;
+    font-weight: bold;
+    padding-top: rem(80);
+    padding-bottom: rem(55);
+}
+
+.menu__category-title {
+    font-size: rem(24);
+    max-width: rem(680);
+    margin: rem(25) auto rem(25);
+    text-align: left;
+    background-color: rgba(245, 246, 247);
+    padding-left: rem(10);
+    padding-right: rem(10);
+}
+
 .menu__item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    column-gap: rem(500);
+    max-width: rem(600);
+    margin: 0 auto;
+    text-align: left;
 }
 
 /* スマホ微調整 */
@@ -738,6 +758,8 @@ img {
     &__inner {
         opacity: 0;
         transform: translateY(12px);
+        margin-top: rem(100);
+        margin-bottom: rem(100);
     }
 
     &.is-show {
@@ -1235,11 +1257,14 @@ img {
     }
 }
 
-.fade-up,
-.talk-section,
-.result-section {
-    opacity: 1 !important;
-    transform: none !important;
+.treatment-page {
+
+    .fade-up,
+    .talk-section,
+    .result-section {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* Animation : Talk / Result　*/
@@ -1261,13 +1286,31 @@ img {
 
 /* Animation : fade-up　*/
 
-.fade-up {
-    opacity: 0;
-    transform: translateY(30px);
+.marker {
+    position: relative;
+    display: inline;
 }
 
-.fade-up.show {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+/* マーカー本体 */
+.marker::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.15em;
+    /* ← 位置はここで調整 */
+    width: 100%;
+    height: 0.6em;
+    background-color: #87cefa;
+    opacity: 0.3;
+    z-index: -1;
+
+    /* 初期状態：引かれていない */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.8s ease;
+}
+
+/* スクロール後 */
+.marker.is-active::after {
+    transform: scaleX(1);
 }

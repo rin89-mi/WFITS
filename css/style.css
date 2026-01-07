@@ -11,7 +11,7 @@
   width: 100%;
   position: fixed;
   z-index: 1000;
-  background-color: rgba(245, 246, 247, 0.9);
+  background-color: rgb(245, 246, 247);
   padding: 0.625rem 0rem;
 }
 .header__inner {
@@ -156,16 +156,16 @@ img {
   text-align: center;
   order: 3;
   display: block;
-  padding-top: 15px;
+  padding-top: 0.9375rem;
   border-top: 1px solid #1a3350;
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 /* ページトップへ */
 .go-to-top {
   text-decoration: none;
   color: white;
-  font-size: 14px;
+  font-size: 1rem;
   margin-left: auto;
   order: 2;
   text-align: right;
@@ -212,7 +212,7 @@ img {
 .go-to-top {
   text-decoration: none;
   color: white;
-  font-size: 14px;
+  font-size: 1rem;
   margin-left: auto;
   order: 2;
   text-align: right;
@@ -261,7 +261,7 @@ img {
 .color__left {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
   text-align: center;
 }
 .color__title, .color__text, .color__inner .color__button {
@@ -385,9 +385,8 @@ img {
 
 /* menu */
 .menuplan {
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 5rem;
-  font-weight: bold;
 }
 .menuplan__inner {
   max-width: 1440px;
@@ -396,12 +395,31 @@ img {
   margin-right: auto;
 }
 
+.menu__title {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 5rem;
+  padding-bottom: 3.4375rem;
+}
+
+.menu__category-title {
+  font-size: 1.5rem;
+  max-width: 42.5rem;
+  margin: 1.5625rem auto 1.5625rem;
+  text-align: left;
+  background-color: rgb(245, 246, 247);
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
 .menu__item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  -moz-column-gap: 31.25rem;
-       column-gap: 31.25rem;
+  max-width: 37.5rem;
+  margin: 0 auto;
+  text-align: left;
 }
 
 /* スマホ微調整 */
@@ -622,6 +640,8 @@ img {
 .result-section__inner {
   opacity: 0;
   transform: translateY(12px);
+  margin-top: 6.25rem;
+  margin-bottom: 6.25rem;
 }
 .talk-section.is-show .talk-section__inner,
 .talk-section.is-show .result-section__inner,
@@ -979,11 +999,11 @@ img {
     bottom: 18.75rem !important;
   }
 }
-.fade-up,
-.talk-section,
-.result-section {
-  opacity: 1 !important;
-  transform: none !important;
+.treatment-page .fade-up,
+.treatment-page .talk-section,
+.treatment-page .result-section {
+  opacity: 1;
+  transform: none;
 }
 
 /* Animation : Talk / Result　*/
@@ -1003,14 +1023,31 @@ img {
 }
 
 /* Animation : fade-up　*/
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
+.marker {
+  position: relative;
+  display: inline;
 }
 
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+/* マーカー本体 */
+.marker::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.15em;
+  /* ← 位置はここで調整 */
+  width: 100%;
+  height: 0.6em;
+  background-color: #87cefa;
+  opacity: 0.3;
+  z-index: -1;
+  /* 初期状態：引かれていない */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s ease;
+}
+
+/* スクロール後 */
+.marker.is-active::after {
+  transform: scaleX(1);
 }
 /*# sourceMappingURL=style.css.map */
