@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
        ページトップへ戻る
     ===================== */
     const goToTopLink = document.getElementById('js-goto-top');
-
     if (goToTopLink) {
         goToTopLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -13,93 +12,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =====================
-       fade-up（共通）
+       共通スライダー（SPのみ）
     ===================== */
-    const fadeTargets = document.querySelectorAll(
-        '.fade-up, .fade-up-title, .fade-up-text'
-    );
+    if (window.innerWidth > 440) return;
 
-    const fadeObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                observer.unobserve(entry.target); // 一度だけ
+    function initSlider(selector) {
+        const track = document.querySelector(selector);
+        if (!track) return;
+
+        const slides = track.children;
+        const slideCount = slides.length;
+        if (slideCount <= 1) return;
+
+        const firstClone = slides[0].cloneNode(true);
+        track.appendChild(firstClone);
+
+        let index = 0;
+        const interval = 3000;
+        const speed = 600;
+
+        setInterval(() => {
+            index++;
+            track.style.transition = `transform ${speed}ms ease`;
+            track.style.transform = `translateX(-${index * 100}%)`;
+
+            if (index === slideCount) {
+                setTimeout(() => {
+                    track.style.transition = 'none';
+                    track.style.transform = 'translateX(0)';
+                    index = 0;
+                }, speed);
             }
-        });
-    }, { threshold: 0.3 });
-
-    fadeTargets.forEach(el => fadeObserver.observe(el));
-
-    /* =====================
-       語りかけブロック
-    ===================== */
-    const talkBlocks = document.querySelectorAll(
-        '.talk-section, .result-section'
-    );
-
-    const talkObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-show');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.4 });
-
-    talkBlocks.forEach(el => talkObserver.observe(el));
-
-    /* =====================
-       private__pic（スマホ）
-    ===================== */
-    if (window.innerWidth <= 440) {
-        const images = document.querySelectorAll(
-            '.private__pics-row .private__img'
-        );
-
-        if (images.length > 0) {
-            let currentIndex = 0;
-            images[0].classList.add('active');
-
-            setInterval(() => {
-                images[currentIndex].classList.remove('active');
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].classList.add('active');
-            }, 3000);
-        }
+        }, interval);
     }
 
-    /* =====================
-       グローバルメニュー current 自動判定
-    ===================== */
-    const currentPath = location.pathname;
+    // カラーページ
+    initSlider('.color_sh__track');
 
-    const navLinks = document.querySelectorAll(
-        '.gnav__item a, .gnav2__item a'
-    );
+    // トリートメントページ
+    initSlider('.sh__track');
 
-    navLinks.forEach(link => {
-        if (link.getAttribute('href').startsWith('#')) return;
+    const menuItems = document.querySelectorAll('.gnav2__item a');
+    const currentPath = location.pathname.split("/").pop(); // ファイル名だけ取得
 
-        const linkPath = new URL(link.href).pathname;
-
-        if (currentPath === linkPath) {
+    menuItems.forEach(link => {
+        const linkPath = link.getAttribute('href').split("/").pop(); // ファイル名だけ
+        if (linkPath === currentPath) {
             link.parentElement.classList.add('current');
         }
     });
-    /* =====================
-   マーカー演出（文字は固定）
-===================== */
-    const markers = document.querySelectorAll('.js-marker');
-
-    const markerObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-active');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.6 });
-
-    markers.forEach(marker => markerObserver.observe(marker));
 
 });

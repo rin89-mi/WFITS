@@ -25,6 +25,20 @@
   align-items: center;
 }
 
+.reserve-btn {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.reserve-btn:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.reserve-btn:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.15);
+  transform: translateY(1px);
+}
+
 .gnav {
   justify-self: end;
 }
@@ -49,8 +63,12 @@ img {
   vertical-align: bottom;
 }
 
+:root {
+  --header-h: 88px;
+}
+
 .main {
-  padding-top: 88px;
+  padding-top: var(--header-h);
 }
 
 .mainvisual__inner {
@@ -208,7 +226,6 @@ img {
   transform: scaleX(1);
 }
 
-/* ページトップへ */
 .go-to-top {
   text-decoration: none;
   color: white;
@@ -222,7 +239,11 @@ img {
   display: inline;
 }
 
-/*top*/
+/* Treatmentでは使わない */
+.page-treatment .sh {
+  display: none;
+}
+
 .pc-only {
   display: none;
 }
@@ -394,16 +415,14 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-
-.menu__title {
+.menuplan__title {
   font-size: 2rem;
   text-align: center;
   font-weight: bold;
   padding-top: 5rem;
   padding-bottom: 3.4375rem;
 }
-
-.menu__category-title {
+.menuplan__category-title {
   font-size: 1.5rem;
   max-width: 42.5rem;
   margin: 1.5625rem auto 1.5625rem;
@@ -412,8 +431,7 @@ img {
   padding-left: 0.625rem;
   padding-right: 0.625rem;
 }
-
-.menu__item {
+.menuplan__item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -531,6 +549,11 @@ img {
   height: auto;
 }
 
+.color_sh {
+  width: 21.9375rem;
+  height: 29rem;
+}
+
 .drug__inner {
   margin-left: auto;
   margin-right: auto;
@@ -598,7 +621,6 @@ img {
   color: #333;
 }
 
-/*　フェードアップ共通　*/
 .fade-up-title,
 .fade-up-text {
   opacity: 0;
@@ -756,8 +778,34 @@ img {
   border-radius: 0.3125rem;
 }
 
+.treatment-page .sh {
+  display: none;
+}
+
+.color_sh {
+  display: none;
+}
+
 /*------------------------------------*/
 @media (min-width: 441px) {
+  .color_mv {
+    display: block;
+    width: 100%;
+    height: 568px;
+    overflow: hidden;
+  }
+  .color_mv img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .color_sh {
+    display: none;
+  }
+  .color_sh {
+    display: none;
+  }
   .gnav2 {
     display: none;
   }
@@ -780,6 +828,9 @@ img {
   .sh_br {
     display: none;
   }
+  .color_sh__track {
+    transform: none;
+  }
 }
 @media (max-width: 700px) {
   .information {
@@ -789,6 +840,63 @@ img {
   }
 }
 @media (max-width: 440px) {
+  .color_mv {
+    display: none;
+  }
+  .color_sh {
+    display: block;
+    width: 100%;
+    max-width: 351px;
+    overflow: hidden;
+    position: relative;
+  }
+  .color_sh__track {
+    display: flex;
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+  }
+  .color_sh__track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .treatment-page .sh {
+    display: block;
+    overflow: hidden;
+  }
+  .treatment-page .sh__track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .treatment-page .sh__track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  :root {
+    --header-h: 64px;
+  }
+  .treatment-page .mv {
+    display: none;
+  }
+  .treatment-page .sh {
+    display: block;
+    width: 100%;
+    max-width: 351px;
+    aspect-ratio: 3/4;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .sh__track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
   .colorpage__pic {
     display: flex;
   }

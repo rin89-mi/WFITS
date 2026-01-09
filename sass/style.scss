@@ -82,6 +82,24 @@ $breakpoints: (
     }
 }
 
+.reserve-btn {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.reserve-btn:hover {
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
+}
+
+.reserve-btn:active {
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(0, 0, 0, 0.15);
+    transform: translateY(1px);
+}
+
 .gnav {
     justify-self: end;
 
@@ -106,8 +124,12 @@ img {
     vertical-align: bottom;
 }
 
+:root {
+    --header-h: 88px;
+}
+
 .main {
-    padding-top: 88px;
+    padding-top: var(--header-h);
 }
 
 .mainvisual {
@@ -278,7 +300,6 @@ img {
     }
 }
 
-/* ページトップへ */
 .go-to-top {
     text-decoration: none;
     color: white;
@@ -293,7 +314,11 @@ img {
     }
 }
 
-/*top*/
+/* Treatmentでは使わない */
+.page-treatment .sh {
+    display: none;
+}
+
 .pc-only {
     display: none;
 }
@@ -483,33 +508,33 @@ img {
     &__inner {
         @include inner();
     }
-}
 
-.menu__title {
-    font-size: rem(32);
-    text-align: center;
-    font-weight: bold;
-    padding-top: rem(80);
-    padding-bottom: rem(55);
-}
+    &__title {
+        font-size: rem(32);
+        text-align: center;
+        font-weight: bold;
+        padding-top: rem(80);
+        padding-bottom: rem(55);
+    }
 
-.menu__category-title {
-    font-size: rem(24);
-    max-width: rem(680);
-    margin: rem(25) auto rem(25);
-    text-align: left;
-    background-color: rgba(245, 246, 247);
-    padding-left: rem(10);
-    padding-right: rem(10);
-}
+    &__category-title {
+        font-size: rem(24);
+        max-width: rem(680);
+        margin: rem(25) auto rem(25);
+        text-align: left;
+        background-color: rgba(245, 246, 247);
+        padding-left: rem(10);
+        padding-right: rem(10);
+    }
 
-.menu__item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: rem(600);
-    margin: 0 auto;
-    text-align: left;
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: rem(600);
+        margin: 0 auto;
+        text-align: left;
+    }
 }
 
 /* スマホ微調整 */
@@ -637,6 +662,11 @@ img {
     }
 }
 
+.color_sh {
+    width: rem(351);
+    height: rem(464);
+}
+
 .drug {
     &__inner {
         margin-left: auto;
@@ -713,7 +743,6 @@ img {
     }
 }
 
-/*　フェードアップ共通　*/
 .fade-up-title,
 .fade-up-text {
     opacity: 0;
@@ -890,11 +919,43 @@ img {
     border-radius: rem(5);
 }
 
+.treatment-page .sh {
+    display: none;
+}
+
+.color_sh {
+    display: none;
+}
+
+
+
+
+
 /*------------------------------------*/
 
 
 @media (min-width:441px) {
 
+    .color_mv {
+        display: block; // PCではカラーMV表示
+        width: 100%;
+        height: 568px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .color_sh {
+        display: none; // PCではスマホスライダー非表示
+    }
+
+    .color_sh {
+        display: none;
+    }
 
     .gnav2 {
         display: none;
@@ -931,9 +992,9 @@ img {
         display: none;
     }
 
-
-
-
+    .color_sh__track {
+        transform: none;
+    }
 
 }
 
@@ -946,6 +1007,72 @@ img {
 }
 
 @media (max-width: 440px) {
+    .color_mv {
+        display: none;
+    }
+
+    .color_sh {
+        display: block;
+        width: 100%;
+        max-width: 351px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .color_sh__track {
+        display: flex;
+        transform: translateX(0);
+        transition: transform 0.5s ease;
+    }
+
+    .color_sh__track img {
+        flex: 0 0 100%;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .treatment-page .sh {
+        display: block;
+        overflow: hidden;
+    }
+
+    .treatment-page .sh__track {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .treatment-page .sh__track img {
+        flex: 0 0 100%;
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    :root {
+        --header-h: 64px;
+    }
+
+    .treatment-page .mv {
+        display: none;
+    }
+
+    .treatment-page .sh {
+        display: block;
+        width: 100%;
+        max-width: 351px;
+        aspect-ratio: 3 / 4;
+        height: auto;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    .sh__track img {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
     .colorpage__pic {
         display: flex;

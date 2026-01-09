@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
+<body class="menupage">
     <div id="top"></div>
     <header id="top"></header>
     <header class="header">
@@ -37,8 +37,9 @@
                 </ul>
             </nav>
 
+
             <a href="https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000592672">
-                <img src="./image/btn2.png" alt="予約ボタン（ホットペーパービューティーのページに飛ぶ）">
+                <img class="reserve-btn" src="./image/btn2.jpg" alt="予約ボタン（ホットペーパービューティーのページに飛ぶ）">
             </a>
         </div>
     </header>
@@ -46,7 +47,6 @@
     <main class="main">
         <div class="mainvisual">
             <div class="mainvisual__inner">
-
                 <nav class="gnav2">
                     <ul class="gnav2__list">
                         <li class="gnav2__item"><a href="./index.html">TOP</a></li>
@@ -59,80 +59,67 @@
         </div>
 
         <section class="menuplan">
-            <h1 class="menu__title">MENU</h1>
-
-            <!-- カット -->
-            <div class="menu__category">
-                <h2 class="menu__category-title">カット</h2>
-
-                <div class="menu__item">
-                    <p class="menu__name">カット</p>
-                    <p class="menu__price">¥5,000~</p>
+            <div class="menuplan__inner">
+                <h1 class="menuplan__title">MENU</h1>
+                <!-- カット -->
+                <div class="menuplan__category">
+                    <h2 class="menuplan__category-title">カット</h2>
+                    <div class="menuplan__item">
+                        <p class="menuplan__name">カット</p>
+                        <p class="menuplan__price">¥5,000~</p>
+                    </div>
                 </div>
-            </div>
-
-            <!-- カラー -->
-            <div class="menu__category">
-                <h2 class="menu__category-title">カラー</h2>
-
-                <div class="menu__item">
-                    <p class="menu__name">ナチュラル</p>
-                    <p class="menu__price">¥6,600~</p>
+                <!-- カラー -->
+                <div class="menuplan__category">
+                    <h2 class="menuplan__category-title">カラー</h2>
+                    <div class="menuplan__item">
+                        <p class="menuplan__name">ナチュラル</p>
+                        <p class="menuplan__price">¥6,600~</p>
+                    </div>
+                    <div class="menuplan__item">
+                        <p class="menuplan__name">白髪染め</p>
+                        <p class="menuplan__price">¥7,700~</p>
+                    </div>
+                    <div class="menuplan__item">
+                        <p class="menuplan__name">ブリーチ</p>
+                        <p class="menuplan__price">¥7,700~</p>
+                    </div>
                 </div>
-
-                <div class="menu__item">
-                    <p class="menu__name">白髪染め</p>
-                    <p class="menu__price">¥7,700~</p>
+                <!-- パーマ -->
+                <div class="menuplan__category">
+                    <h2 class="menuplan__category-title">パーマ</h2>
+                    <div class="menuplan__item">
+                        <p class="menuplan__name">パーマ</p>
+                        <p class="menuplan__price">¥6,600~</p>
+                    </div>
+                    <div class="menuplan__item">
+                        <p class="menuplan__name">デザインパーマ</p>
+                        <p class="menuplan__price">¥8,800~</p>
+                    </div>
                 </div>
-
-                <div class="menu__item">
-                    <p class="menu__name">ブリーチ</p>
-                    <p class="menu__price">¥7,700~</p>
+                <!-- トリートメント -->
+                <div class="menuplan__category">
+                    <h2 class="menuplan__category-title">トリートメント</h2>
+                    <div class="menuplan__item">
+                        <p class="menuplan__name">トリートメント</p>
+                        <p class="menuplan__price">¥4,400~</p>
+                    </div>
+                    <div class="menuplan__item">
+                        <p class="menuplan__name">ノンダメージ</p>
+                        <p class="menuplan__price">¥2,200~</p>
+                    </div>
                 </div>
-            </div>
-
-            <!-- パーマ -->
-            <div class="menu__category">
-                <h2 class="menu__category-title">パーマ</h2>
-
-                <div class="menu__item">
-                    <p class="menu__name">パーマ</p>
-                    <p class="menu__price">¥6,600~</p>
-                </div>
-
-                <div class="menu__item">
-                    <p class="menu__name">デザインパーマ</p>
-                    <p class="menu__price">¥8,800~</p>
-                </div>
-            </div>
-
-            <!-- トリートメント -->
-            <div class="menu__category">
-                <h2 class="menu__category-title">トリートメント</h2>
-
-                <div class="menu__item">
-                    <p class="menu__name">トリートメント</p>
-                    <p class="menu__price">¥4,400~</p>
-                </div>
-
-                <div class="menu__item">
-                    <p class="menu__name">ノンダメージ</p>
-                    <p class="menu__price">¥2,200~</p>
-                </div>
-            </div>
-
-            <!-- その他 -->
-            <div class="menu__category">
-                <h2 class="menu__category-title">その他</h2>
-
-                <div class="menu__item">
-                    <p class="menu__name">シャンプー・ブロー</p>
-                    <p class="menu__price">¥2,200~</p>
-                </div>
-
-                <div class="menu__item">
-                    <p class="menu__name">縮毛矯正</p>
-                    <p class="menu__price">¥18,700~</p>
+                <!-- その他 -->
+                <div class="menuplan__category">
+                    <h2 class="menuplan__category-title">その他</h2>
+                    <div class="menuplan__item">
+                        <p class="menuplan__name">シャンプー・ブロー</p>
+                        <p class="menuplan__price">¥2,200~</p>
+                    </div>
+                    <div class="menuplan__item">
+                        <p class="menuplan__name">縮毛矯正</p>
+                        <p class="menuplan__price">¥18,700~</p>
+                    </div>
                 </div>
             </div>
         </section>

@@ -37,7 +37,7 @@
             </nav>
 
             <a href="https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000592672">
-                <img src="./image/btn2.png" alt="予約ボタン（ホットペーパービューティーのページに飛ぶ）">
+                <img class="reserve-btn" src="./image/btn2.jpg" alt="予約ボタン（ホットペーパービューティーのページに飛ぶ）">
             </a>
         </div>
     </header>
@@ -46,11 +46,18 @@
         <div class="mainvisual">
             <div class="mainvisual__inner">
                 <picture class="mainvisual__pic">
-                    <source media="(max-width: 440px)" srcset="./image/main.sh.png">
-                    <div class="mv">
+                    <div class="color_mv">
                         <img src="./image/color.webp" alt="メインビジュアル">
                     </div>
                 </picture>
+
+                <div class="color_sh">
+                    <div class="color_sh__track">
+                        <img src="./image/colorsh1.webp" alt="">
+                        <img src="./image/colorsh2.webp" alt="">
+                        <img src="./image/colorsh3.webp" alt="">
+                    </div>
+                </div>
                 <nav class="gnav2">
                     <ul class="gnav2__list">
                         <li class="gnav2__item"><a href="./index.html">TOP</a></li>
@@ -64,10 +71,10 @@
 
         <section class="colorpage">
             <div class="colorpage__inner">
-                <h2 class="colorpage__title">グレイカラー</h2>
+                <h2 class="colorpage__title">カラー・グレイカラー</h2>
                 <picture class="colorpage__pic">
-                    <img src="./image/colorpage.img.png" alt="">
-                    <img src="./image/colorpage.tool.png" alt="">
+                    <img src="./image/treatmentpageimg.webp" alt="" width="300" height="300">
+                    <img src="./image/contrast.webp" alt="" width="300px" height="300px">
                 </picture>
             </div>
         </section>
@@ -108,11 +115,13 @@
             </div>
         </div>
 
-        <section id="menu" class="menu">
-            <picture class="menu__pic">
-                <img src="./image/menu.png" alt="メニュー">
-            </picture>
-        </section>
+        <div id="menu">
+            <section id="menu" class="menu">
+                <picture class="menu__pic">
+                    <img src="./image/menu.webp" alt="メニュー">
+                </picture>
+            </section>
+        </div>
 
         <div class="information">
             <div class="information__inner">
