@@ -5,13 +5,8 @@ $ease-talk: cubic-bezier(0.22, 1, 0.36, 1);
 $ease-result: cubic-bezier(0.25, 0.8, 0.25, 1);
 $talk-offset: 12px;
 
-// Base Layout
-.talk-section,
-.result-section {
-    padding: 80px 20px;
-    opacity: 0;
-    transform: translateY($talk-offset);
-}
+
+
 
 // --- Spacing ---
 $space-xs: 0.25rem; // 4px
@@ -314,7 +309,6 @@ img {
     }
 }
 
-/* Treatmentでは使わない */
 .page-treatment .sh {
     display: none;
 }
@@ -326,6 +320,127 @@ img {
 .sp-only {
     display: inline;
 }
+
+.news {
+    &__heading {
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+
+    &-slider {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &-window {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    padding-top: rem(100);
+
+    &__inner {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 40px;
+        letter-spacing: 0.1em;
+    }
+
+    &__list {
+        display: flex;
+        transition: transform 0.4s ease;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        box-sizing: border-box;
+        border-bottom: 1px solid #e5e5e5;
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    &__link {
+        display: block;
+        padding: 20px 0;
+        color: #333;
+        text-decoration: none;
+        transition: opacity 0.3s;
+    }
+
+    &__link:hover {
+        opacity: 0.7;
+    }
+
+    &__date {
+        display: block;
+        font-size: 14px;
+        color: #999;
+        margin-bottom: 6px;
+        min-width: 110px;
+        font-size: 14px;
+    }
+
+    &__label {
+        display: inline-block;
+        font-size: 12px;
+        padding: 2px 8px;
+        margin-bottom: 8px;
+        background: #f0f0f0;
+        color: #555;
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 1.6;
+        display: block;
+
+        &.is-open p {
+            -webkit-line-clamp: unset;
+        }
+    }
+}
+
+.news__item>div:last-child {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.news-page {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.news-page ul {
+    display: flex;
+    flex-direction: column;
+    /* ← 縦並び */
+    gap: 12px;
+}
+
+.news-track {
+    display: flex;
+    /* ← 横にスライド */
+    transition: transform 0.4s ease;
+}
+
+.news__text p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+
 
 .concept {
     padding: rem(100) rem(0);
@@ -441,7 +556,6 @@ img {
         margin: 0 auto;
         text-align: center;
 
-        /* 間（語りかけの余韻） */
         &::after {
             content: "…";
             display: block;
@@ -492,13 +606,6 @@ img {
     }
 }
 
-/* Base Layout（スクロール演出用） */
-.talk-section,
-.result-section {
-    opacity: 0;
-    transform: translateY($talk-offset);
-}
-
 /* menu */
 .menuplan {
     font-size: rem(16);
@@ -539,12 +646,6 @@ img {
 
 /* スマホ微調整 */
 @media (max-width: 440px) {
-
-    .talk-section,
-    .result-section {
-        padding: 60px 16px;
-
-    }
 
     .talk-section__title {
         font-size: 1.4rem;
@@ -745,7 +846,6 @@ img {
 
 .fade-up-title,
 .fade-up-text {
-    opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 
@@ -781,7 +881,7 @@ img {
     }
 }
 
-/* talk / result 表示アニメーション　*/
+
 .talk-section,
 .result-section {
     &__inner {
@@ -927,17 +1027,12 @@ img {
     display: none;
 }
 
-
-
-
-
 /*------------------------------------*/
-
 
 @media (min-width:441px) {
 
     .color_mv {
-        display: block; // PCではカラーMV表示
+        display: block;
         width: 100%;
         height: 568px;
         overflow: hidden;
@@ -950,7 +1045,7 @@ img {
     }
 
     .color_sh {
-        display: none; // PCではスマホスライダー非表示
+        display: none;
     }
 
     .color_sh {
@@ -1007,6 +1102,18 @@ img {
 }
 
 @media (max-width: 440px) {
+    .news {
+        padding: 60px 16px;
+    }
+
+    .news__title {
+        font-size: 24px;
+    }
+
+    .news__text {
+        font-size: 15px;
+    }
+
     .color_mv {
         display: none;
     }
@@ -1110,6 +1217,8 @@ img {
     .mv {
         height: 464px;
         width: 351px;
+        width: 100%;
+        margin: 0 auto;
     }
 
 
@@ -1193,8 +1302,6 @@ img {
 
 
     }
-
-
 
     .private {
 
@@ -1312,7 +1419,6 @@ img {
         }
     }
 
-    /*colorpage*/
     .colorpage {
         &__pic {
             display: none;
@@ -1384,26 +1490,12 @@ img {
     }
 }
 
-.treatment-page {
-
-    .fade-up,
-    .talk-section,
-    .result-section {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-/* Animation : Talk / Result　*/
-
-/* 初期状態（隠す） */
 .talk-section__inner,
 .result-section__inner {
     opacity: 0;
     transform: translateY(12px);
 }
 
-/* 表示状態 */
 .talk-section.is-show .talk-section__inner,
 .result-section.is-show .result-section__inner {
     opacity: 1;
@@ -1411,33 +1503,37 @@ img {
     transition: opacity 0.8s ease, transform 1s ease;
 }
 
-/* Animation : fade-up　*/
-
 .marker {
     position: relative;
     display: inline;
 }
 
-/* マーカー本体 */
 .marker::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0.15em;
-    /* ← 位置はここで調整 */
     width: 100%;
     height: 0.6em;
     background-color: #87cefa;
     opacity: 0.3;
     z-index: -1;
-
-    /* 初期状態：引かれていない */
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.8s ease;
 }
 
-/* スクロール後 */
 .marker.is-active::after {
     transform: scaleX(1);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.7s ease, transform 0.7s ease;
 }

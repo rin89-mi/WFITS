@@ -1,11 +1,4 @@
 @charset "UTF-8";
-.talk-section,
-.result-section {
-  padding: 80px 20px;
-  opacity: 0;
-  transform: translateY(12px);
-}
-
 /*reuse*/
 .header {
   width: 100%;
@@ -239,7 +232,6 @@ img {
   display: inline;
 }
 
-/* Treatmentでは使わない */
 .page-treatment .sh {
   display: none;
 }
@@ -250,6 +242,112 @@ img {
 
 .sp-only {
   display: inline;
+}
+
+.news {
+  padding-top: 6.25rem;
+}
+.news__heading {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.news-slider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.news-window {
+  overflow: hidden;
+  width: 100%;
+}
+.news__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.news__title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 0.1em;
+}
+.news__list {
+  display: flex;
+  transition: transform 0.4s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.news__item {
+  box-sizing: border-box;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.news__link {
+  display: block;
+  padding: 20px 0;
+  color: #333;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.news__link:hover {
+  opacity: 0.7;
+}
+.news__date {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 6px;
+  min-width: 110px;
+  font-size: 14px;
+}
+.news__label {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+  background: #f0f0f0;
+  color: #555;
+}
+.news__text {
+  font-size: 14px;
+  line-height: 1.6;
+  display: block;
+}
+.news__text.is-open p {
+  -webkit-line-clamp: unset;
+}
+
+.news__item > div:last-child {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.news-page {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.news-page ul {
+  display: flex;
+  flex-direction: column;
+  /* ← 縦並び */
+  gap: 12px;
+}
+
+.news-track {
+  display: flex;
+  /* ← 横にスライド */
+  transition: transform 0.4s ease;
+}
+
+.news__text p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .concept {
@@ -354,7 +452,6 @@ img {
   max-width: 520px;
   margin: 0 auto;
   text-align: center;
-  /* 間（語りかけの余韻） */
 }
 .talk-section__inner::after {
   content: "…";
@@ -397,13 +494,6 @@ img {
   color: #666;
 }
 
-/* Base Layout（スクロール演出用） */
-.talk-section,
-.result-section {
-  opacity: 0;
-  transform: translateY(12px);
-}
-
 /* menu */
 .menuplan {
   font-size: 1rem;
@@ -442,10 +532,6 @@ img {
 
 /* スマホ微調整 */
 @media (max-width: 440px) {
-  .talk-section,
-.result-section {
-    padding: 60px 16px;
-  }
   .talk-section__title {
     font-size: 1.4rem;
   }
@@ -623,7 +709,6 @@ img {
 
 .fade-up-title,
 .fade-up-text {
-  opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
@@ -657,7 +742,6 @@ img {
   font-weight: bold;
 }
 
-/* talk / result 表示アニメーション　*/
 .talk-section__inner,
 .result-section__inner {
   opacity: 0;
@@ -840,6 +924,15 @@ img {
   }
 }
 @media (max-width: 440px) {
+  .news {
+    padding: 60px 16px;
+  }
+  .news__title {
+    font-size: 24px;
+  }
+  .news__text {
+    font-size: 15px;
+  }
   .color_mv {
     display: none;
   }
@@ -925,6 +1018,8 @@ img {
   .mv {
     height: 464px;
     width: 351px;
+    width: 100%;
+    margin: 0 auto;
   }
   .concept__title {
     font-size: 1rem !important;
@@ -1060,7 +1155,6 @@ img {
   .information__money {
     font-size: 1rem !important;
   }
-  /*colorpage*/
   .colorpage__pic {
     display: none;
   }
@@ -1107,22 +1201,12 @@ img {
     bottom: 18.75rem !important;
   }
 }
-.treatment-page .fade-up,
-.treatment-page .talk-section,
-.treatment-page .result-section {
-  opacity: 1;
-  transform: none;
-}
-
-/* Animation : Talk / Result　*/
-/* 初期状態（隠す） */
 .talk-section__inner,
 .result-section__inner {
   opacity: 0;
   transform: translateY(12px);
 }
 
-/* 表示状態 */
 .talk-section.is-show .talk-section__inner,
 .result-section.is-show .result-section__inner {
   opacity: 1;
@@ -1130,32 +1214,38 @@ img {
   transition: opacity 0.8s ease, transform 1s ease;
 }
 
-/* Animation : fade-up　*/
 .marker {
   position: relative;
   display: inline;
 }
 
-/* マーカー本体 */
 .marker::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0.15em;
-  /* ← 位置はここで調整 */
   width: 100%;
   height: 0.6em;
   background-color: #87cefa;
   opacity: 0.3;
   z-index: -1;
-  /* 初期状態：引かれていない */
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.8s ease;
 }
 
-/* スクロール後 */
 .marker.is-active::after {
   transform: scaleX(1);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 /*# sourceMappingURL=style.css.map */
